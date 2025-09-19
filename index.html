@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Progress Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Left Column (25%) -->
+        <div class="column left-column">
+            <div class="card profile-card">
+                <img src="https://avatars.githubusercontent.com/u/115228503?v=4" alt="My Photo" class="profile-photo">
+                <!-- <h3>Kishan Data</h3> -->
+                <p>@kishandata</p>
+            </div>
+
+            <div class="card calendar-section">
+                <h4>Calendar</h4>
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <span id="currentMonthYear"></span>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar days will be rendered here by JS -->
+                </div>
+            </div>
+
+            <div class="card language-section">
+                <h4>Languages Used</h4>
+                <div class="language-icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL" title="SQL">
+                    <!-- Add more language icons as needed -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Column (50%) -->
+        <div class="column middle-column">
+            <div class="card daily-progress-grid">
+                <h4>Daily Progress (Last 365 Days)</h4>
+                <div class="progress-grid-container" id="progressGridContainer">
+                    <!-- Progress squares will be rendered here by JS -->
+                </div>
+            </div>
+
+            <div class="card current-day-problems">
+                <h4>Problems for <span id="currentDayProblemsDate">Today</span></h4>
+                <ul id="currentDayProblemsList">
+                    <!-- Current day problems will be rendered here by JS -->
+                </ul>
+                <p id="noCurrentDayProblems" style="display: none;">No problems recorded for this date.</p>
+            </div>
+        </div>
+
+        <!-- Right Column (25%) -->
+        <div class="column right-column">
+            <div class="card difficulty-progress">
+                <h4>Difficulty Progress</h4>
+                <div class="progress-item">
+                    <span>Easy</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar easy" id="easyProgressBar"></div>
+                    </div>
+                    <span id="easyProgressText">0/0 (0%)</span>
+                </div>
+                <div class="progress-item">
+                    <span>Medium</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar medium" id="mediumProgressBar"></div>
+                    </div>
+                    <span id="mediumProgressText">0/0 (0%)</span>
+                </div>
+                <div class="progress-item">
+                    <span>Hard</span>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar hard" id="hardProgressBar"></div>
+                    </div>
+                    <span id="hardProgressText">0/0 (0%)</span>
+                </div>
+            </div>
+            <button id="showLast7DaysBtn" class="dashboard-button">Show Last 7 Days Problems</button>
+        </div>
+    </div>
+
+    <!-- The Modal for Last 7 Days Problems -->
+    <div id="last7DaysModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h4>Last 7 Days Problems</h4>
+            <ul id="last7DaysProblemsList">
+                <!-- Last 7 days easy will be rendered here by JS -->
+            </ul>
+            <p id="noLast7DaysProblems" style="display: none;">No problems recorded in the last 7 days.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
